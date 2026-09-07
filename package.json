@@ -16,7 +16,15 @@
 	"url": "git+https://github.com/alcadesign/rocket-league-stats-api.git"
   },
   "type": "module",
-  "main": "dist/index.js",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+	".": {
+		"import": "./dist/index.js",
+		"types": "./dist/index.d.ts"
+	}
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "node scripts/build.ts && dts-bundle-generator -o dist/index.d.ts src/index.ts --no-banner --silent"
