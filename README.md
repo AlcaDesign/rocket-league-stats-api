@@ -17,7 +17,7 @@ const client = new RocketLeagueStatsApiClient();
 
 client.connect();
 
-client.onSocketOpen = () => console.log('Connected!');
+client.onSocketConnected = () => console.log('Connected!');
 
 client.onGoalScored = data => {
 	console.log(`${data.Scorer.Name} scored! ${data.Assister ? `(${data.Assister.Name} assisted)` : ''}`);
